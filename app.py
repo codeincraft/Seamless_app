@@ -8,6 +8,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = _fastapi.FastAPI()
 
+@app.on_event("startup")
+def startup():
+    _services.create_db()
+
+
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
