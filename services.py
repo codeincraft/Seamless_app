@@ -5,7 +5,7 @@ import schemas as _schemas
 import email_validator as _email_validator
 import fastapi as _fastapi
 import bcrypt  # Changed from passlib.hash
-import jwt as _jwt
+from jose import jwt as _jwt # type: ignore
 import fastapi.security as _security
 import os
 from datetime import datetime, timedelta
