@@ -13,6 +13,9 @@ def startup():
     _services.create_db()
 
 
+@app.get("/")
+def read_root():
+    return {"message": "Seamless App is live!"}
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
